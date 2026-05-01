@@ -1,0 +1,186 @@
+/* ganti sndri kl warnanya mw diganti, cape ak yh */
+:root {
+    --primary-bg: #FFD100;
+    --secondary-bg: #FF5C00;
+    --accent: #00E1FF;
+    --dark: #000000;
+    --white: #ffffff;
+    --succes-comic: #00FF66;
+    --warning-comic: #FFD100;
+    --danger-comic: #FF5C00;
+}
+ 
+body {
+    font-family:  'Public Sans', sans-serif;
+    background-color: #f0f0f0;
+    color: var(--dark);
+}
+
+.comic-border {
+    border:  3px solid var(--dark) !important;
+    box-shadow: 5px 5px 0px var(--dark) !important;
+    transition: all 0.2 ease;
+}
+
+.comic-border:hover {
+    transform:  translate(-2px, -2px);
+    box-shadow: 8px 8px 0px var(--dark) !important;
+}
+
+/* kl tombolnya butut gnti sndri aj */
+
+.comic-btn {
+    border: 3px solid var(--dark) !important;
+    box-shadow: 4px 4px 0px var(--dark) !important;
+    font-weight: 900 !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 12px 25px;
+    border-radius: 0 !important;
+    transition: all 0.2s ease;
+}
+
+.comic-btn:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px var(--dark) !important;
+    background-color: var(--dark) !important;
+    color: white !important;
+}
+
+.page-header {
+    background-color: var(--primary-bg);
+    border-bottom: 4px solid var(--dark);
+    padding: 30px 0;
+    margin-bottom: 40px;
+}
+
+.ringkasan-box {
+    background: #fdfdfd;
+    border: 2px dashed var(--dark);
+    padding: 15px;
+    font-style: italic;
+    position: relative;
+}
+
+.ringkasan-box::before{
+    content: '"';
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    font-size: 2rem;
+    background: white;
+    line-height: 0 5px;
+    font-weight: 900;
+}
+
+.form-section {
+    background-color: var(--accent);
+    min-height: 100vh;
+    padding: 50px 0;
+}
+
+.navbar {
+    border-bottom: 4px solid var(--dark);
+    background-color: var(--white) !important;
+}
+
+.hero-section{
+    background-color: var(--primary-bg);
+    border-bottom: 4px solid var(--dark);
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: "BACAA SYG!";
+    position: absolute;
+    font-size: 15rem;
+    font-weight: 900;
+    color: rgba(0, 0, 0,  0.05);
+    top: -20px;
+    right: -20px;
+    transform: rotate(-10deg);
+}
+
+.hero-title {
+    font-size: 4rem;
+    font-weight: 900;
+    text-shadow: 3px 3px 0px var(--white);
+    -webkit-text-stroke: 1px var(--dark);
+}
+
+.leaderboard-title {
+    background: var(--secondary-bg);
+    color: white;
+    border: 3px solid var(--dark);
+    padding: 10px;
+    margin-top: -30px;
+    transform: rotate(-2deg);
+}
+
+.info-card {
+    background: var(--white);
+    padding: 20px;
+    height: 100%;
+}
+
+.badge-comic {
+    background-color: var(--accent) !important;
+    color: var(--dark) !important;
+    border-radius: 0 !important;
+    font-weight: bold !important;
+}
+
+.badge-status {
+    border: 2px solid var(--dark);
+    border-radius: 0;
+    font-weight: 900;
+    text-transform: uppercase;
+    padding: 5px 12px;
+}
+
+.footer {
+    background: var(--dark) !important;
+    color: var(--white);
+    border-top: 4px solid var(--secondary-bg);
+}
+
+.fw-black {
+    font-weight: 900;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.login-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background-color: var(--accent);
+}
+
+.comic-input {
+    border: 3px solid var(--dark) !important;
+    border-radius: 0 !important;
+    padding: 12px !important;
+    font-size: bold;
+    box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.1);
+}
+
+.comic-input:focus {
+    box-shadow: 4px 4px 0px var(--dark) !important;
+    outline: none;
+    border-color: var(--dark) !important;
+}
+
+.alert-comic {
+    border: 3px solid var(--dark);
+    border-radius: 0;
+    background-color: var(--danger-comic);
+    color: white;
+    font-weight: bold;
+    box-shadow: 4px 4px 0px var(--dark);
+}
+
