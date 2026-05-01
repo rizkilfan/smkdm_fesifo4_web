@@ -1,0 +1,1 @@
+rangga gehu dan ranti bala-bala
