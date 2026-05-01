@@ -75,7 +75,7 @@ if (isset($_POST['save'])) {
             <?php if ($message) : ?>
                 <div class="alert alert-info comic-border fw-bold mb-4"><?=  $message ?></div>
                 <?php endif; ?>
-                <!-- nanti -->
+                <!-- huuuuuuuuuuuuu almak bingungggggggg -->
 
         </di class="comic-border bg-white p-4 mb-5">
         <h4 class="fw-black uppercase mb-4" id="form-title">Tambah / Edit User</h4>
@@ -89,9 +89,98 @@ if (isset($_POST['save'])) {
                 </div>
             </div class="col-md-6">
             <label class="fw-bold small">ROLE</label>
-            
-         
-
+            <select name="role" id="role" class="form-select comic-input" required>
+                <option value="siswa">SISWA</option>
+                <option value="guru">GURU</option>
+                <option value="admin">ADMIN</option>  
+            </select>
             </div>
-      </body>
+            <div class="col-md-6">
+            <label class="fw-bold small">USERNAME</label>
+            <input type="text" name="username" id="username" class="form-control comic-input" required>
+            </div>
+            <div class="col-md-6">
+                <label class="fw-bold small">PASSWORD (isi jika ingin)</label>
+                <input type="password" name="password" id="password" class="form-control comic-input">
+            </div>
+            </div>
+            <div class="mt-4 d-flex gap-2">
+                <button type="submit" name="save" class="btn btn-warning comic-btn px-4">SIMPAN DATA</button>
+                <button type="button" onclick="resetForm()" class="btn btn-light comic-border px-4 fw-bold">RESET</button>
+            </div>
+            </form>
+            </div>
+            <h4 class="fw-black uppercase mb-3">Daftar Pengguna</h4>
+            <divclass="comic-border bg-white overflow-hidden">
+                <div class="table-responsive">
+                    <table class="table table-hover mb-0">
+                        <thead class="table-dark">
+                            <tr>
+                                <th class="ps-4">NAMA</th>
+                                <th>USERNAME</th>
+                                <th>ROLE</th>
+                                <th class="text-center">AKSI</th>
+                            </tr>
+            </thead>
+            <tbody>
+                <?php
+                $users = $conn->query("SELECT * FROM users ORDER BY role ASC, nama ASC");
+                while ($u = $users->fetch()):
+                    ?>
+                    <tr class="align-middle">
+                        <td class="ps-4 fw-bold"><?=htmlspecialchars($u['nama']) ?></td>
+                        <td><code><?= htmlspecialchars($u['username']) ?></code></td>
+                        <td>
+                            <span class="badge badge-status bg-info text-dark" style="font-size: 0.7rem;">
+                                <?=  strtoupper($u['role']) ?>
+                            </span>
+                        </td>
+                        <td class="text-center">
+                            <button class="btn btn-sm btn-outline-dark fw-black-me-2"
+                            onclick="fillForm('<?= $u['id_user'] ?>','<?= $u['nama'] ?>','<?= $u['username'] ?>','<?= $u['role'] ?>')">
+                            EDIT</button>
+                            <a href="?delete=<?=  $u['id_user'] ?>"
+                            class="btn btn-sm btn-danger comic-btn py-0"
+                            onclick="return confirm('Hapus user ini?')">HAPUS</a>
+                        </td>
+                    </tr>
+                    <?php endwhile; ?>
+            </tbody>
+                    </table>
+                </div>
+                </div>
+                </div>
+
+                <footer class="py-4">
+                    <div class="container text-center text-while small fw-black uppercase">
+                        AKSARA+ ADMIN PANEL
+                    </div>
+                </footer>
+
+                <!-- GTW KM LIAT SNDRI AJA INI -->
+                 <script>
+                    function fillForm(id, nama, username, role) {
+                        document.getElementById('id_user').value = id;
+                        document.getElementById('nama').value = nama;
+                        document.getElementById('username').value = username;
+                        document.getElementById('role').value = role;
+                        document.getElementById('form-title').innerText = "Edit User: " + nama;
+                        document.getElementById('password').placeholder = "Kosongkan jika tidak ganti ";
+                        window.scrollTo({
+                            top: 0,
+                            behavior: 'smooth'
+                        })
+                    }
+
+                    function resetForm() {
+                        document.getElementById('userForm').reset();
+                        document.getElementById('id_user').value = "";
+                        document.getElementById('form-title').innerText = "Tambah / Edit User";
+                        document.getElementById('password').placeholder = "";
+                    }
+                    </script>
+                    </body>
       </html>
+
+                
+            
