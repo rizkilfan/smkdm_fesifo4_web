@@ -101,7 +101,7 @@ $submissions = $query->fetchAll();
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // pake modal js bawaan weh nya... males nyieun modal cutom... --ranti
+        // pakai modal js bawaan aja yaa ga... males bikin modal cutom... --ranti
         function tolakliterasi(el) {
             let alasan = prompt("Tolak literasi ini?\nMasukkan alasan:");
 
