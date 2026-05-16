@@ -19,30 +19,31 @@ $query = $conn->query("SELECT s.*, u.nama FROM submissions s JOIN users u ON s.i
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,700;0,900;1,400&display=swap" rel="stylesheet">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" rel="stylesheet">
-        <link href="../assets/style.css rel="stylesheet">
+        <link href="../assets/style.css" rel="stylesheet">
     </head>
     <body class="bg-light">
 
     <nav class="navbar navbar-expand-lg sticky-top mb-4">
         <div class="container">
         
-<a class="navbar-brand fw-black fs-3 href="index.php">AKSARA<span class="text-primary">+</span> REKAP</a>
+<a class="navbar-brand fw-black fs-3" href="index.php">AKSARA<span class="text-primary">+</span> REKAP</a>
 <div class="ms-auto">
-    <a hraf="index.php" class="btn btn-dark comic-btn py-1 px-3" style="font-size: 0.8rem;"> KEMBALI</a>
+    <a href="index.php" class="btn btn-dark comic-btn py-1 px-3" style="font-size: 0.8rem;"> KEMBALI</a>
 </div>
 </div>
     </nav>
 
     <div class="container mb-5">
-        <div class="d-flex-column flex-md-row justify-content-between align-items-md-center mb-4">
-        </div>
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-4">
+        <div>
         <h2 class="fw-black uppercase m-0">Seluruh Data Literasi</h2>
                 <p class="fw-bold text-muted mb-0">Total arsip: <?= $query->rowCount() ?> laporan ditemukan.</p>
             </div>
             <div class="mt-3 mt-md-0">
 <!-- kita pake cetak aja yaa ga..... biar langsung di print nya lewat browser.. jadi ga perlu pake library mpdf... males hehe --titiww-->
 
-                <button onclick="window.print()" class="btn btn-info comic-btn fw-black">PRINT REKAP <i class="fa-solid fa-print"></i></button>
+                <button onclick="window.print()" class="btn btn-info comic-btn fw-black">PRINT REKAP <i class="fa-solid fa-print"></i>
+            </button>
             </div>
         </div>
 
