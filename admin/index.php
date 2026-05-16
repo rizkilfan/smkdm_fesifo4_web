@@ -27,12 +27,12 @@ if (isset($_POST['save'])) {
         $message = "User berhasil diperbarui";
       } else {
         $pass = password_hash($_POST['password'], PASSWORD_DEFAULT);
-         $sql = "INSERT INTO users (nama, username, password, role) VALUES (?, ?, ?, ?,)";
-            $conn->prepare($sql)->execute([$nama, $username, $pass, $role]);
+         $sql = "INSERT INTO users (nama, username, password, role) VALUES (?, ?, ?, ?)";
+            
 
              try {
                 $conn->prepare($sql)->execute([$nama, $username, $pass, $role]);
-                $message = "User baeu berhasil ditambahkan!";
+                $message = "User baru berhasil ditambahkan!";
              } catch (PDOException $e) {
                  $message = "Gagal: Username mungkin sudah ada.";
              }
@@ -42,22 +42,22 @@ if (isset($_POST['save'])) {
       if (isset($_GET['delete'])) {
         $id = $_GET['delete'];
         $conn->prepare("DELETE FROM users WHERE id_user=?")->execute([$id]);
-        $message = "User Behasil Dihapus";
+        $message = "User Berhasil Dihapus";
       }
       
       ?>
 
       <!DOCTYPE html>
-      <html lang="en">
+      <html lang="id">
 
       <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Admin Dashboard - AKSARA+</title>
-        <link href="https://cdnjsdelivr.net/npm/boostrap@5.3.0/dist/css/boostrap.min.css"
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
         rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,700;0,900;1,400&display=swap" rel="stylesheet">
-        <link href="https:cdnjs.cloudflare.com/ajax/libs/fontawesome/7.0.1/css/all.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" rel="stylesheet">
         <link href="../assets/style.css" rel="stylesheet">
       </head>
       
@@ -65,9 +65,9 @@ if (isset($_POST['save'])) {
 
       <nav class="navbar navbar-expand-lg sticky-top mb-4">
         <div class="container">
-            <a class="navbar-brand fw-black fs-3 href="#">AKSARA<span class="text-primary">+</span>ADMIN</a>
+            <a class="navbar-brand fw-black fs-3" href ="#">AKSARA<span class="text-primary">+</span>ADMIN</a>
             <div class="ms-auto">
-                <a href="../auth/logout.php" class="btn-danger comic-btn py-1 px-3">LOGOUT</a>
+                <a href="../auth/logout.php" class="btn btn-danger comic-btn py-1 px-3">LOGOUT</a>
             </div>
         </div>
       </nav>
@@ -77,7 +77,7 @@ if (isset($_POST['save'])) {
                 <?php endif; ?>
                 <!-- huuuuuuuuuuuuu almak bingungggggggg -->
 
-        </di class="comic-border bg-white p-4 mb-5">
+        <div class="comic-border bg-white p-4 mb-5">
         <h4 class="fw-black uppercase mb-4" id="form-title">Tambah / Edit User</h4>
         <form method="POST" id="userForm">
             <input type="hidden" name="id_user" id="id_user">
@@ -85,9 +85,9 @@ if (isset($_POST['save'])) {
             <div class="row g-3">
                 <div class="col-md-6">
                     <label class="fw-bold small">NAMA LENGKAP</label>
-                    <input type="text" name="nama" class="form control comic-input" required>
+                    <input type="text" name="nama" id="nama" class="form-control comic-input" required>
                 </div>
-            </div class="col-md-6">
+            <div class="col-md-6">
             <label class="fw-bold small">ROLE</label>
             <select name="role" id="role" class="form-select comic-input" required>
                 <option value="siswa">SISWA</option>
@@ -111,7 +111,7 @@ if (isset($_POST['save'])) {
             </form>
             </div>
             <h4 class="fw-black uppercase mb-3">Daftar Pengguna</h4>
-            <divclass="comic-border bg-white overflow-hidden">
+            <div class="comic-border bg-white overflow-hidden">
                 <div class="table-responsive">
                     <table class="table table-hover mb-0">
                         <thead class="table-dark">
@@ -136,7 +136,7 @@ if (isset($_POST['save'])) {
                             </span>
                         </td>
                         <td class="text-center">
-                            <button class="btn btn-sm btn-outline-dark fw-black-me-2"
+                            <button class="btn btn-sm btn-outline-dark fw-black me-2"
                             onclick="fillForm('<?= $u['id_user'] ?>','<?= $u['nama'] ?>','<?= $u['username'] ?>','<?= $u['role'] ?>')">
                             EDIT</button>
                             <a href="?delete=<?=  $u['id_user'] ?>"
@@ -152,7 +152,7 @@ if (isset($_POST['save'])) {
                 </div>
 
                 <footer class="py-4">
-                    <div class="container text-center text-while small fw-black uppercase">
+                    <div class="container text-center text-white small fw-black uppercase">
                         AKSARA+ ADMIN PANEL
                     </div>
                 </footer>
@@ -169,7 +169,7 @@ if (isset($_POST['save'])) {
                         window.scrollTo({
                             top: 0,
                             behavior: 'smooth'
-                        })
+                        });
                     }
 
                     function resetForm() {
