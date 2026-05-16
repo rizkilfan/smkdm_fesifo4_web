@@ -31,11 +31,9 @@ if (isset($_POST['login'])) {
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale-1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> AKSARA+ - Literasi Digital </title>
-    <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css"
-        rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=public+Sans:ital,wght@0,700;0,900;1,400&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" rel="stylesheet">
     <link href="../assets/style.css" rel="stylesheet">
@@ -62,11 +60,11 @@ if (isset($_POST['login'])) {
 
                 <form method="POST">
                     <div class="mb-3">
-                        <label class="fw=bold mb-1">USERNAME</label>
+                        <label class="fw-bold mb-1">USERNAME</label>
                         <input type="text" name="username" class="form-control comic-input" placeholder="masukkan username..." required>
                     </div>
                     <div class="mb-4">
-                        <label class="fw=bold mb-1">PASSWORD</label>
+                        <label class="fw-bold mb-1">PASSWORD</label>
                         <input type="password" name="password" class="form-control comic-input" placeholder="******" required>
                     </div>
                     <button type="submit" name="login" class="btn btn-warning comic-btn w-100 py-3">
@@ -74,8 +72,8 @@ if (isset($_POST['login'])) {
                     </button>
                 </form>
 
-                <div class="tect-center mt-4">
-                    <a href="../index.php" class="text-dark small fw-bold texr-dwcoration-none">← Kembali ke beranda</a>
+                <div class="text-center mt-4">
+                    <a href="../index.php" class="text-dark small fw-bold texr-decoration-none">← Kembali ke beranda</a>
             </div>
             </div>
             <p class="text-center mt-4 small fw-bold opacity-75">@ 2026 AKSARA+ SMKDM</p>
