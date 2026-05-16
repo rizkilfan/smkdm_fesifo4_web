@@ -1,251 +1,150 @@
-/* =========================
-   CANDY POP THEME CSS
-   Tema warna-warni lucu & cerah
-========================= */
-
+/* ganti sndri kl warnanya mw diganti, cape ak yh */
 :root {
-    --primary-bg: #ff69b4;
-    --secondary-bg: #ffb703;
-    --accent: #00d9ff;
-
-    --dark: #2b2b2b;
+    --primary-bg: #FFD100;
+    --secondary-bg: #FF5C00;
+    --accent: #00E1FF;
+    --dark: #000000;
     --white: #ffffff;
-
-    --purple: #9b5cff;
-    --green: #5dff8b;
-    --red: #ff4d6d;
+    --succes-comic: #00FF66;
+    --warning-comic: #FFD100;
+    --danger-comic: #FF5C00;
 }
-
-/* BODY */
+ 
 body {
     font-family: 'Public Sans', sans-serif;
-
-    background:
-        linear-gradient(
-            135deg,
-            #ff69b4,
-            #ffb703,
-            #00d9ff,
-            #9b5cff
-        );
-
-    background-size: 400% 400%;
-    animation: candyMove 10s ease infinite;
-
+    background-color: #f0f0f0;
     color: var(--dark);
 }
 
-/* ANIMATION */
-@keyframes candyMove {
-    0% {
-        background-position: 0% 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-/* BORDER */
 .comic-border {
-    border: 4px solid var(--dark) !important;
-
-    border-radius: 24px !important;
-
-    box-shadow: 8px 8px 0px var(--dark) !important;
-
-    transition: all 0.2s ease;
-
-    background: rgba(255,255,255,0.95);
+    border: 3px solid var(--dark) !important;
+    box-shadow: 5px 5px 0px var(--dark) !important;
+    transition: all 0.2 ease;
 }
 
 .comic-border:hover {
-    transform: translate(-4px, -4px);
-
-    box-shadow: 12px 12px 0px var(--dark) !important;
+    transform: translate(-2px, -2px);
+    box-shadow: 8px 8px 0px var(--dark) !important;
 }
 
-/* BUTTON */
+/* kl tombolnya butut gnti sndri aj */
 .comic-btn {
-    border: 4px solid var(--dark) !important;
-
-    border-radius: 18px !important;
-
-    background: var(--primary-bg) !important;
-
-    color: white !important;
-
+    border: 3px solid var(--dark) !important;
+    box-shadow: 4px 4px 0px var(--dark) !important;
     font-weight: 900 !important;
-
     text-transform: uppercase;
-
     letter-spacing: 1px;
-
-    padding: 12px 24px;
-
-    box-shadow: 5px 5px 0px var(--dark) !important;
-
+    padding: 12px 25px;
+    border-radius: 0 !important;
     transition: all 0.2s ease;
 }
 
 .comic-btn:hover {
-    transform: translate(-3px, -3px);
-
-    background: var(--purple) !important;
-
-    box-shadow: 8px 8px 0px var(--dark) !important;
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px var(--dark) !important;
+    background-color: var(--dark) !important;
+    color: white !important;
 }
 
-/* NAVBAR */
-.navbar {
-    background: var(--white) !important;
-
-    border-bottom: 5px solid var(--dark);
+.page-header {
+    background-color: var(--primary-bg);
+    border-bottom: 4px solid var(--dark);
+    padding: 30px 0;
+    margin-bottom: 40px;
 }
 
-/* HERO */
-.hero-section {
-    background:
-        linear-gradient(
-            135deg,
-            #ff69b4,
-            #ffb703,
-            #00d9ff
-        );
-
-    padding: 90px 0;
-
-    border-bottom: 5px solid var(--dark);
-
+.ringkasan-box {
+    background: #fdfdfd;
+    border: 2px dashed var(--dark);
+    padding: 15px;
+    font-style: italic;
     position: relative;
+}
 
+.ringkasan-box::before {
+    content: '"';
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    font-size: 2rem;
+    background: white;
+    line-height: 0 5px;
+    font-weight: 900;
+}
+
+.form-section {
+    background-color: var(--accent);
+    min-height: 100vh;
+    padding: 50px 0;
+}
+
+.navbar {
+    border-bottom: 4px solid var(--dark);
+    background-color: var(--white) !important;
+}
+
+.hero-section {
+    background-color: var(--primary-bg);
+    border-bottom: 4px solid var(--dark);
+    padding: 80px 0;
+    position: relative;
     overflow: hidden;
 }
 
-/* BACKGROUND TEXT */
 .hero-section::before {
-    content: "CANDY!";
+    content: "BACAA SYG!";
     position: absolute;
-
-    top: -20px;
-    right: -10px;
-
-    font-size: 12rem;
-
+    font-size: 15rem;
     font-weight: 900;
-
-    color: rgba(255,255,255,0.15);
-
+    color: rgba(0, 0, 0, 0.05);
+    top: -20px;
+    right: -20px;
     transform: rotate(-10deg);
 }
 
-/* TITLE */
 .hero-title {
     font-size: 4rem;
-
     font-weight: 900;
-
-    color: white;
-
-    text-shadow:
-        4px 4px 0px var(--dark);
-
-    letter-spacing: 2px;
+    text-shadow: 3px 3px 0px var(--white);
+    -webkit-text-stroke: 1px var(--dark);
 }
 
-/* CARD */
+.leaderboard-title {
+    background: var(--secondary-bg);
+    color: white;
+    border: 3px solid var(--dark);
+    padding: 10px;
+    margin-top: -30px;
+    transform: rotate(-2deg);
+}
+
 .info-card {
-    background: white;
-
-    border-radius: 20px;
-
-    padding: 25px;
-
+    background: var(--white);
+    padding: 20px;
     height: 100%;
 }
 
-/* LEADERBOARD */
-.leaderboard-title {
-    background: var(--purple);
-
-    color: white;
-
-    border: 4px solid var(--dark);
-
-    border-radius: 18px;
-
-    padding: 12px;
-
-    transform: rotate(-2deg);
-
-    box-shadow: 6px 6px 0px var(--dark);
-}
-
-/* INPUT */
-.comic-input {
-    border: 4px solid var(--dark) !important;
-
-    border-radius: 16px !important;
-
-    padding: 12px !important;
-
-    box-shadow: 4px 4px 0px rgba(0,0,0,0.15);
-
-    transition: all 0.2s ease;
-}
-
-.comic-input:focus {
-    border-color: var(--accent) !important;
-
-    box-shadow:
-        0 0 0 3px rgba(0,217,255,0.4),
-        5px 5px 0px var(--dark) !important;
-
-    outline: none;
-}
-
-/* BADGE */
 .badge-comic {
-    background: var(--green) !important;
-
+    background-color: var(--accent) !important;
     color: var(--dark) !important;
-
-    border-radius: 14px !important;
-
-    border: 3px solid var(--dark);
-
-    font-weight: 900 !important;
-
-    padding: 8px 14px;
+    border-radius: 0 !important;
+    font-weight: bold !important;
 }
 
-/* STATUS */
 .badge-status {
-    border: 3px solid var(--dark);
-
-    border-radius: 12px;
-
+    border: 2px solid var(--dark);
+    border-radius: 0;
     font-weight: 900;
-
     text-transform: uppercase;
-
     padding: 5px 12px;
 }
 
-/* FOOTER */
-footer {
-    background: var(--dark);
-
-    color: white;
-
-    border-top: 5px solid var(--primary-bg);
+.footer {
+    background: var(--dark) !important;
+    color: var(--white);
+    border-top: 4px solid var(--secondary-bg);
 }
 
-/* UTIL */
 .fw-black {
     font-weight: 900;
 }
@@ -254,58 +153,32 @@ footer {
     text-transform: uppercase;
 }
 
-/* LOGIN */
 .login-container {
     min-height: 100vh;
-
     display: flex;
     align-items: center;
-    justify-content: center;
-
-    background:
-        linear-gradient(
-            135deg,
-            #ff69b4,
-            #ffb703,
-            #00d9ff,
-            #9b5cff
-        );
-
-    background-size: 400% 400%;
-    animation: candyMove 10s ease infinite;
+    background-color: var(--accent);
 }
 
-/* ALERT */
+.comic-input {
+    border: 3px solid var(--dark) !important;
+    border-radius: 0 !important;
+    padding: 12px !important;
+    font-size: bold;
+    box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.1);
+}
+
+.comic-input:focus {
+    box-shadow: 4px 4px 0px var(--dark) !important;
+    outline: none;
+    border-color: var(--dark) !important;
+}
+
 .alert-comic {
-    border: 4px solid var(--dark);
-
-    border-radius: 16px;
-
-    background: var(--red);
-
+    border: 3px solid var(--dark);
+    border-radius: 0;
+    background-color: var(--danger-comic);
     color: white;
-
     font-weight: bold;
-
-    box-shadow: 5px 5px 0px var(--dark);
-}
-
-/* TABLE */
-.table {
-    border-radius: 16px;
-
-    overflow: hidden;
-}
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-
-    .hero-title {
-        font-size: 2.5rem;
-    }
-
-    .hero-section::before {
-        font-size: 6rem;
-    }
-
+    box-shadow: 4px 4px 0px var(--dark);
 }
