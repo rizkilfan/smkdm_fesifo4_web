@@ -1,4 +1,3 @@
-index.php
 <?php 
 include '../config/database.php'; 
 
